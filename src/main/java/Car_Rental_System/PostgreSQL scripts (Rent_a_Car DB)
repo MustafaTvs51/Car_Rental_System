@@ -1,4 +1,33 @@
 
------------------------------------------SQL CAR_RENTAL_SYSTEM_DATABASE_SCRIPTS-----------------------------------------
+-----------------------------------------SQL CAR_RENTAL_SYSTEM_DATABASE_QUERY-----------------------------------------
 
 
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(100),
+    email VARCHAR(100) UNIQUE,
+    password_hash TEXT,
+    age INT,
+    is_corporate BOOLEAN,
+    is_admin BOOLEAN
+);
+
+CREATE TABLE vehicles (
+    id SERIAL PRIMARY KEY,
+    brand VARCHAR(50),
+    model VARCHAR(50),
+    category VARCHAR(20),
+    price DECIMAL,
+    deposit_rate DECIMAL,
+    rental_rate DECIMAL
+);
+
+CREATE TABLE rentals (
+    id SERIAL PRIMARY KEY,
+    user_id INT REFERENCES users(id),
+    vehicle_id INT REFERENCES vehicles(id),
+    start_date TIMESTAMP,
+    end_date TIMESTAMP,
+    rental_type VARCHAR(20),
+    total_price DECIMAL
+);

@@ -57,7 +57,7 @@ public class RentalService {
         System.out.println("Başlangıç: " + rental.getStartDate());
         System.out.println("Bitiş: " + rental.getEndDate());
     }
-    public List<Rental> getUserRentals(int userId) {
+    public List<Rental> getUserRentals(int userId) throws SQLException {
         return rentalDAO.getRentalsByUserId(userId);
     }
 

@@ -13,8 +13,14 @@ public class Rental {
     private LocalDateTime endDate;
     private RentalType rentalType;
     private BigDecimal totalPrice;
+    private Vehicle vehicle;
+    public Rental() {
 
-    public Rental() {}
+    }
+
+    public Vehicle getVehicle() {
+        return vehicle;
+    }
 
     public Rental(int userId, int vehicleId, LocalDateTime startDate, LocalDateTime endDate, RentalType rentalType, BigDecimal totalPrice) {
         this.userId = userId;
@@ -32,8 +38,12 @@ public class Rental {
     private String vehicleInfo;
 
     public String getVehicleInfo() {
-        return vehicleInfo;
+        if (vehicle != null) {
+            return vehicle.getBrand() + " " + vehicle.getModel();
+        }
+        return "Araç bilgisi bulunamadı.";
     }
+
 
     public static void setVehicleInfo(String vehicleInfo) {
 
@@ -95,4 +105,7 @@ public class Rental {
         this.vehicleId = vehicleId;
     }
 
+    public void setVehicle(Vehicle vehicle) {
+        this.vehicle = vehicle;
+    }
 }
