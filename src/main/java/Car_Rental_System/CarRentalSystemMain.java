@@ -203,7 +203,9 @@ public class CarRentalSystemMain {
                 System.out.print("Kiralama türü (HOURLY, DAILY, WEEKLY, MONTHLY): ");
                 RentalType rentalType = RentalType.valueOf(scanner.nextLine().toUpperCase());
 
-                System.out.print("Süre (saat/gün/hafta/ay): ");
+                System.out.print("Seçtiğiniz türe ait ne kadar süreliğine kiralamak istiyorsunuz\n" +
+                        "(saat/gün/hafta/ay)\n" +
+                        "Sadece sayı girmeniz yeterli ! : ");
                 int duration = Integer.parseInt(scanner.nextLine());
 
                 rentalService.rentVehicle(user, selectedVehicle, rentalType, duration);
