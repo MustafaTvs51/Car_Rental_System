@@ -40,21 +40,30 @@ Bu proje, Java ile geliştirilmiş terminal tabanlı bir **Araç Kiralama Uygula
 
 ## 📂 Proje Yapısı
 
+
 ```
 Car_Rental_System/
 ├── Models/
 │   ├── User.java
 │   ├── Vehicle.java
 │   ├── Rental.java
-│   └── enums/
-│       ├── RentalType.java
-│       └── VehicleCategory.java
+├── DAO/
+│   ├── UserDao.java
+│   ├── VehicleDao.java
+│   └── RentalDao.java
 ├── Services/
 │   ├── AuthService.java
 │   ├── RentalService.java
 │   └── VehicleService.java
+├── Utils/
+│   ├── DbConnection.java
+│   └── InputHelper.java
+├── Enums/
+│   ├── RentalType.java
+│   └── VehicleCategory.java
 ├── CarRentalSystemMain.java
 ```
+
 
 ## 📸 Ekran Görüntüsü (Terminal)
 
