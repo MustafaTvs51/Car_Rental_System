@@ -1,24 +1,69 @@
-🚗 Araç Kiralama Sistemi
-Bu proje, araç kiralama süreçlerini dijitalleştirerek kullanıcıların araç rezervasyonu yapmasını ve yöneticilerin araç envanterini etkin bir şekilde yönetmesini sağlayan bir web uygulamasıdır.
 
-📌 Proje Özeti
-Araç Kiralama Sistemi, kullanıcıların çevrimiçi olarak araç kiralama işlemlerini gerçekleştirebileceği, yöneticilerin ise araç envanterini ve rezervasyonları yönetebileceği bir platform sunar. Sistem, kullanıcı dostu arayüzü ve güvenli oturum yönetimi ile hem kullanıcılar hem de yöneticiler için verimli bir deneyim sağlar.
+# 🚗 Java ile Geliştirilmiş Araç Kiralama Sistemi
 
-🚀 Özellikler
-Kullanıcı Kayıt ve Giriş: Yeni kullanıcılar sisteme kayıt olabilir ve mevcut kullanıcılar güvenli bir şekilde giriş yapabilir.
+Bu proje, Java ile geliştirilmiş terminal tabanlı bir **Araç Kiralama Uygulaması**dır. Kullanıcılar sisteme giriş yapabilir, araçları görüntüleyebilir ve kiralama işlemlerini yönetebilirler. Aynı zamanda araç ve kullanıcı yönetimini sağlayan servis yapıları da bulunmaktadır.
 
-Araç Listeleme: Mevcut araçlar listelenir ve kullanıcılar ihtiyaçlarına uygun aracı seçebilir.
+## 📌 Özellikler
 
-Rezervasyon Sistemi: Kullanıcılar, seçtikleri araçlar için belirli tarihler arasında kiralama yapabilir.
+- Kullanıcı kayıt ve giriş işlemleri
+- Araç listeleme ve filtreleme
+- Kiralık araçların kiralanması ve iade edilmesi
+- Saatlik ve günlük kiralama türleri
+- Araç kategorilerine göre sınıflandırma
+- Modüler ve katmanlı mimari (Model, Service, Enum, Main)
 
-Yönetici Paneli: Yöneticiler, araç envanterini güncelleyebilir, yeni araçlar ekleyebilir veya mevcut araçları düzenleyebilirsiniz.
+## 🛠️ Kullanılan Teknolojiler
 
-Rezervasyon Yönetimi: Yöneticiler, yapılan rezervasyonları görüntüleyebilir ve yönetebilir.
+- **Java 21**
+- **Katmanlı Mimari**
+  - `Models`, `Services`, `Enums`, `Main`
+- **OOP (Nesne Yönelimli Programlama)**
+- **BigDecimal** ile para hesaplamaları
+- **Exception Handling** (SQLException dahil)
+- **Enum** ile kiralama türü ve araç kategorisi modelleme
+- **Maven** Archetype kullanıldı.
 
-🛠️ Teknolojiler
-Backend: JAVA
-Veritabanı: PostgreSQL
-👤 Kullanıcı Rolleri
-Kullanıcı: Araçları görüntüleyebilir, rezervasyon yapabilir ve kendi rezervasyon geçmişini görüntüleyebilir.
+## 🚀 Kurulum ve Çalıştırma
 
+### Gereksinimler
+- Java 21 veya üzeri
+- Bir IDE (Örneğin IntelliJ IDEA veya Eclipse)
+- Terminal veya konsol
 
+### Adımlar
+
+1. Bu repoyu klonlayın:
+   ```bash
+   git clone https://github.com/MustafaTvs51/Car_Rental_System.git
+   ```
+2. Projeyi bir Java IDE ile açın.
+
+## 📂 Proje Yapısı
+
+```
+Car_Rental_System/
+├── Models/
+│   ├── User.java
+│   ├── Vehicle.java
+│   ├── Rental.java
+│   └── enums/
+│       ├── RentalType.java
+│       └── VehicleCategory.java
+├── Services/
+│   ├── AuthService.java
+│   ├── RentalService.java
+│   └── VehicleService.java
+├── CarRentalSystemMain.java
+```
+
+## 📸 Ekran Görüntüsü (Terminal)
+
+```
+🚗 Araç Kiralama Uygulamasına Hoş Geldiniz!
+1- Giriş Yap
+2- Kayıt Ol
+3- Çıkış
+```
+## 📄 Lisans
+
+Bu proje MIT lisansı ile lisanslanmıştır.
