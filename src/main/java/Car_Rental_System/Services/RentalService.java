@@ -14,7 +14,7 @@ public class RentalService {
     private final RentalDAO rentalDAO = new RentalDAO();
 
     public void rentVehicle(User user, Vehicle vehicle, RentalType rentalType, int duration) throws Exception {
-        // Kural kontrolleri:
+
         if (user.isCorporate() && rentalType != RentalType.MONTHLY) {
             throw new Exception("Kurumsal kullanıcılar yalnızca aylık kiralama yapabilir.");
         }
@@ -41,7 +41,7 @@ public class RentalService {
 
         BigDecimal totalPrice = vehicle.getRentalRate().multiply(new BigDecimal(duration));
 
-        // Ek olarak depozito kontrolü:
+
         if (vehicle.getPrice().compareTo(new BigDecimal("2000000")) > 0 && user.getAge() >= 30) {
             BigDecimal deposit = vehicle.getPrice().multiply(new BigDecimal("0.10"));
             totalPrice = totalPrice.add(deposit);
@@ -49,7 +49,7 @@ public class RentalService {
 
         rental.setTotalPrice(totalPrice);
 
-        // Veritabanına kaydet
+
         rentalDAO.saveRental(rental);
 
         System.out.println("✅ Kiralama başarıyla tamamlandı!");
